@@ -1,0 +1,7 @@
+D:\Scripting\AdventOfCode\2020\03\day03\bin\Debug\day03.exe.config
+D:\Scripting\AdventOfCode\2020\03\day03\bin\Debug\day03.exe
+D:\Scripting\AdventOfCode\2020\03\day03\bin\Debug\day03.pdb
+D:\Scripting\AdventOfCode\2020\03\day03\obj\Debug\day03.csprojAssemblyReference.cache
+D:\Scripting\AdventOfCode\2020\03\day03\obj\Debug\day03.csproj.CoreCompileInputs.cache
+D:\Scripting\AdventOfCode\2020\03\day03\obj\Debug\day03.exe
+D:\Scripting\AdventOfCode\2020\03\day03\obj\Debug\day03.pdb
