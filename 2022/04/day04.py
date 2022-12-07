@@ -8,8 +8,6 @@ with open(file_path, 'r') as f:
 partOneOverlaps = 0
 partTwoOverlaps = 0
 
-allOverlappingValues = []
-
 for team in lines:
     pair = team.strip().split(',')
 
@@ -18,16 +16,15 @@ for team in lines:
     yStart = int(pair[1].split('-')[0])
     yEnd = int(pair[1].split('-')[1])
     
-    xValues = range(xStart,xEnd)
+    xValues = range(xStart,xEnd+1)
+    yValues = range(yStart,yEnd+1)
     
-    for y in range(yStart,yEnd):
-        if y in xValues:
-            allOverlappingValues.append(y)
-            
+    matchingPairs = set(xValues).intersection(yValues)
+    
+    partTwoOverlaps += 1 if len(matchingPairs) > 0 else 0
+    
     if ((yStart >= xStart and yEnd <= xEnd) or (xStart >= yStart and xEnd <= yEnd)):
         partOneOverlaps += 1
         
 print("Part One:",partOneOverlaps)
-
-partTwoUnique = [*set(allOverlappingValues)]
-print("Part Two:", len(partTwoUnique))
+print("Part Two:", partTwoOverlaps)
