@@ -1,5 +1,4 @@
 $inputFile = Get-Content .\myInput.txt
-$ErrorActionPreference = "Stop"
 $wordToDigitMap = @{
     "one"   = "o1e"
     "two"   = "t2o"
@@ -15,17 +14,20 @@ $wordToDigitMap = @{
 $partOneTotal = 0
 $partTwoTotal = 0
 
-foreach ( $line in $inputFile ) {
+foreach ( $line in $inputFile )
+{
     # Collect the values to part 1
     $digitsPartOne = Select-String '\d{1}' -InputObject $line -AllMatches
-    if ( $digitsPartOne.Count -gt 0) {
+    if ( $digitsPartOne.Count -gt 0)
+    {
         $partOneNum = [int]($digitsPartOne.Matches[0].value + $digitsPartOne.Matches[$digitsPartOne.Matches.Count - 1].value)
         $partOneTotal += $partOneNum
     }
 
     # Collect the values for part 2
     $tmpLine = $line
-    foreach ( $value in $wordToDigitMap.GetEnumerator()) {
+    foreach ( $value in $wordToDigitMap.GetEnumerator())
+    {
         $tmpLine = $tmpLine -replace $value.Key, $value.Value
     }
 
