@@ -1,30 +1,22 @@
 $gameInput = Get-Content ./myInput.txt
 
-$redMax = 12
-$greenMax = 13
-$blueMax = 14
+$colorMax = @{red = 12; green = 13; blue = 14}
 $validGames = @()
 $powerSetValues = @()
 
 foreach ( $game in $gameInput )
 {
     $gameID = [int]((Select-String -InputObject $game -Pattern "Game \d+" -AllMatches).Matches -replace 'Game|:')[0]
-    
-    $blues = (Select-String -InputObject $game -Pattern '\d{1,2} Blue' -AllMatches).Matches -replace ' Blue'
-    $greens = (Select-String -InputObject $game -Pattern '\d{1,2} Green' -AllMatches).Matches -replace ' Green'
-    $reds = (Select-String -InputObject $game -Pattern '\d{1,2} Red' -AllMatches).Matches -replace ' Red'
+    $blues = (Select-String -InputObject $game -Pattern '\d{1,2} Blue' -AllMatches).Matches -replace ' Blue' | Measure-Object -Maximum
+    $greens = (Select-String -InputObject $game -Pattern '\d{1,2} Green' -AllMatches).Matches -replace ' Green' | Measure-Object -Maximum
+    $reds = (Select-String -InputObject $game -Pattern '\d{1,2} Red' -AllMatches).Matches -replace ' Red' | Measure-Object -Maximum
 
-    $blueTotals = $blues | Measure-Object -Maximum -Minimum -Sum
-    $greenTotals = $greens | Measure-Object -Maximum -Minimum -Sum
-    $redTotals = $reds | Measure-Object -Maximum -Minimum -Sum
-
-    if ( $blueTotals.Maximum -le $blueMax -and $redTotals.Maximum -le $redMax -and $greenTotals.Maximum -le $greenMax)
+    if ( $blues.Maximum -le $colorMax.blue -and $reds.Maximum -le $colorMax.red -and $greens.Maximum -le $colorMax.green)
     {
         $validGames += [int]$gameID
     }
 
-    $powerSetValues += ($blueTotals.Maximum * $greenTotals.Maximum * $redTotals.Maximum)
-    
+    $powerSetValues += ($blues.Maximum * $greens.Maximum * $reds.Maximum)
 }
 
 Write-Host "Part One: $(($validGames | Measure-Object -Sum).Sum)"
