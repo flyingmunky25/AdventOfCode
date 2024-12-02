@@ -1,4 +1,4 @@
-$inputFile = Get-Content .\myInput.txt
+$inputFile = Get-Content .\savageInput.txt
 $wordToDigitMap = @{
     "one"   = "o1e"
     "two"   = "t2o"
