@@ -1,5 +1,4 @@
-Measure-Command -Expression {
-$pairs = get-content .\input.txt | ConvertFrom-Csv
+$pairs = get-content ..\input.txt | ConvertFrom-Csv
 $list1 = $pairs.list1 | Sort-Object
 $list2 = $pairs.list2 | Sort-Object
 $list2Grouped = $list2 | Group-Object -AsHashTable
@@ -15,5 +14,4 @@ for ( $i = 0; $i -lt $list1.Count; $i++)
     $similarities += [int]([int]$list1[$i] * ($list2Grouped["$($list1[$i])"]).Count)
 }
 
-Write-Output "Part One: $(($diffList | Measure-Object -Sum).Sum); Part Two: $(($similarities | Measure-Object -Sum).Sum)"
-}
+Write-Output "Part One: $(($diffList | Measure-Object -Sum).Sum)         Part Two: $(($similarities | Measure-Object -Sum).Sum)"
