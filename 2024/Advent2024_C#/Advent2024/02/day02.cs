@@ -87,6 +87,17 @@ namespace Advent2024._02
             Console.WriteLine("Part Two: " + partTwoValidEntries.Count);
         }
 
+        internal int FindBadDifference(List<int> report)
+        {
+            int curDifference = 0;
+
+            for ( int i = 0; i < report.Count; i++)
+            {
+                curDifference = Math.Abs(report[i] - report[i + 1]);
+            }
+            return -1;
+        }
+
         internal int GetDirection(int value1, int value2)
         {
             if (value1 < value2) return 1;
