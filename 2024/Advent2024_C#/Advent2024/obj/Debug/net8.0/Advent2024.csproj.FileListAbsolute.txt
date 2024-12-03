@@ -1,0 +1,15 @@
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\bin\Debug\net8.0\Advent2024.exe
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\bin\Debug\net8.0\Advent2024.deps.json
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\bin\Debug\net8.0\Advent2024.runtimeconfig.json
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\bin\Debug\net8.0\Advent2024.dll
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\bin\Debug\net8.0\Advent2024.pdb
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.GeneratedMSBuildEditorConfig.editorconfig
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.AssemblyInfoInputs.cache
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.AssemblyInfo.cs
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.csproj.CoreCompileInputs.cache
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.sourcelink.json
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.dll
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\refint\Advent2024.dll
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.pdb
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\Advent2024.genruntimeconfig.cache
+C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\obj\Debug\net8.0\ref\Advent2024.dll

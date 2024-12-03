@@ -7,14 +7,12 @@ Function Get-Direction
     {
         return -1
     }
-    elseif ($value1 -lt $value2)
+    
+    if ($value1 -lt $value2)
     {
         return 1
     }
-    else
-    {
-        return 0
-    }
+    return 0
 }
 
 Function Process-Report
