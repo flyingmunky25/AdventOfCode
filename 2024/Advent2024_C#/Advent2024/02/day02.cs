@@ -19,136 +19,159 @@ namespace Advent2024._02
         const int MAX_DIFF = 3;
         const int MIN_DIFF = 1;
 
+        bool IsSafe1(IEnumerable<int> a) =>
+    IsSafe(a.Zip(a.Skip(1), (x, y) => x - y));
+
+        bool IsSafe2(IEnumerable<int> a) =>
+            Enumerable.Range(0, a.Count())
+                .Any(i => IsSafe1(a.Take(i).Concat(a.Skip(i + 1))));
+
+        bool IsSafe(IEnumerable<int> b) =>
+            b.All(x => x >= -3 && x <= -1) ||
+            b.All(x => x >= 1 && x <= 3);
+
         public void RunDay02()
         {
+            var input = File.ReadLines(@"C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\inputFiles\input.txt")
+    .Select(s => s.Split(' ').Select(int.Parse));
 
-            List<List<int>> reports = new List<List<int>>();
-            StreamReader reader = new StreamReader(@"C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\inputFiles\input.txt");
-            String line = String.Empty;
-            List<int> partOneValidEntries = new List<int>();
-            List<int> partTwoValidEntries = new List<int>();
+            Console.WriteLine(input.Count(IsSafe1));
+            Console.WriteLine(input.Count(IsSafe2));
+            //    List<List<int>> reports = new List<List<int>>();
+            //    StreamReader reader = new StreamReader(@"C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\inputFiles\input.txt");
+            //    String line = String.Empty;
+            //    List<int> partOneValidEntries = new List<int>();
+            //    List<int> partTwoValidEntries = new List<int>();
 
-            while ((line = reader.ReadLine()) != null)
-            {
-                List<int> tempList = new List<int>();
-                reports.Add(Array.ConvertAll(line.Split(' '), int.Parse).ToList());
-            }
+            //    // Read in the data, store it in a List of "reports"
+            //    while ((line = reader.ReadLine()) != null)
+            //    {
+            //        List<int> tempList = new List<int>();
+            //        reports.Add(Array.ConvertAll(line.Split(' '), int.Parse).ToList());
+            //    }
 
-            // Iterate over the input file (reports)
-            for (int curReport = 0; curReport < reports.Count; curReport++)
-            {
-                bool isValid = IsValidReport(reports[curReport]);
+            //    // Iterate over the input file (reports)
+            //    for (int curReport = 0; curReport < reports.Count; curReport++)
+            //    {
+            //        bool isValid = IsValidReport(reports[curReport]);
 
-                if (isValid)
-                {
-                    partOneValidEntries.Add(curReport);
-                }
-                else  // Check part 2
-                {
-                    // Check if there's excess that we can up-front consider bad
-                    List<int> reportDirections = GetReportDirections(reports[curReport]);
-                    List<int> reportDifferences = GetReportDifferences(reports[curReport]);
+            //        if (isValid)
+            //        {
+            //            partOneValidEntries.Add(curReport);
+            //        }
+            //        else  // Check part 2
+            //        {
+            //            // Check if there's excess that we can up-front consider bad
+            //            List<int> reportDirections = GetReportDirections(reports[curReport]);
+            //            List<int> reportDifferences = GetReportDifferences(reports[curReport]);
 
-                    var badDirection = reportDirections.GroupBy(x => x).Where(x => x.Count() == 1).ToList();
-                    var badDifferences = reportDifferences.Where(x => x > 3 || x < 1).ToList();
+            //            var badDirection = reportDirections.GroupBy(x => x).Where(x => x.Count() == 1).ToList();
+            //            var badDifferences = reportDifferences.Where(x => x > 3 || x < 1).ToList();
 
-                    if (badDirection.Count == 1)
-                    {
-                        // We have a single bad direction, let's remove it and re-test the list.
-                        var key = badDirection[0].Key;
-                        reports[curReport].RemoveAt(reportDirections.IndexOf(key));
+            //            if (badDirection.Count == 1)
+            //            {
+            //                // We have a single bad direction, let's remove it and re-test the list.
+            //                var key = badDirection[0].Key;
+            //                reports[curReport].RemoveAt(reportDirections.IndexOf(key));
 
-                        isValid = IsValidReport(reports[curReport]);
+            //                isValid = IsValidReport(reports[curReport]);
 
-                        if (isValid)
-                        {
-                            partTwoValidEntries.Add(curReport);
-                        }
-                    }
-                    else if (badDifferences.Count() == 1)
-                    {
-                        // We have a single bad direction, let's remove it and re-test the list.
-                        int key = badDifferences[0];
-                        reports[curReport].RemoveAt(reportDifferences.IndexOf(key) + 1);
+            //                if (isValid)
+            //                {
+            //                    partTwoValidEntries.Add(curReport);
+            //                }
+            //            }
+            //            else if (badDifferences.Count() == 1)
+            //            {
+            //                // We have a single bad direction, let's remove it and re-test the list.
+            //                int key = badDifferences[0];
+            //                reports[curReport].RemoveAt(reportDifferences.IndexOf(key) + 1);
 
-                        isValid = IsValidReport(reports[curReport]);
+            //                isValid = IsValidReport(reports[curReport]);
 
-                        if (isValid)
-                        {
-                            partTwoValidEntries.Add(curReport);
-                        }
-                    }
-                }
-            }
+            //                if (isValid)
+            //                {
+            //                    partTwoValidEntries.Add(curReport);
+            //                }
+            //            }
+            //        }
+            //    }
 
-            // Combine parts one and two lists together for part two's answer
-            partTwoValidEntries.AddRange(partOneValidEntries);
-            Console.WriteLine("Part One: " + partOneValidEntries.Count);
-            Console.WriteLine("Part Two: " + partTwoValidEntries.Count);
-        }
+            //    // Combine parts one and two lists together for part two's answer
+            //    partTwoValidEntries.AddRange(partOneValidEntries);
+            //    Console.WriteLine("Part One: " + partOneValidEntries.Count);
+            //    Console.WriteLine("Part Two: " + partTwoValidEntries.Count);
+            //}
 
-        internal int FindBadDifference(List<int> report)
-        {
-            int curDifference = 0;
+            //internal bool isOrdered(List<int> report, bool descending)
+            //{
+            //    if (descending)
+            //        return report.Zip(report.Skip(1), (curr, next) => curr > next).All(x => x);
+            //    return report.Zip(report.Skip(1), (curr, next) => curr < next).All(x => x);
+            //}
 
-            for ( int i = 0; i < report.Count; i++)
-            {
-                curDifference = Math.Abs(report[i] - report[i + 1]);
-            }
-            return -1;
-        }
+            //internal int FindBadDifference(List<int> report)
+            //{
+            //    int curDifference = 0;
 
-        internal int GetDirection(int value1, int value2)
-        {
-            if (value1 < value2) return 1;
-            if (value1 > value2) return -1;
-            return 0;
-        }
+            //    for ( int i = 0; i < report.Count; i++)
+            //    {
+            //        curDifference = Math.Abs(report[i] - report[i + 1]);
+            //    }
+            //    return -1;
+            //}
 
-        internal List<int> GetReportDirections(List<int> report)
-        {
-            List<int> reportDirections = new List<int>();
+            //internal int GetDirection(int value1, int value2)
+            //{
+            //    if (value1 < value2) return 1;
+            //    if (value1 > value2) return -1;
+            //    return 0;
+            //}
 
-            // Get the differences and directions of the report
-            for (int reportValue = 0; reportValue < report.Count - 1; reportValue++)
-            {
-                reportDirections.Add(GetDirection(report[reportValue], report[reportValue + 1]));
-            }
+            //internal List<int> GetReportDirections(List<int> report)
+            //{
+            //    List<int> reportDirections = new List<int>();
 
-            return reportDirections;
-        }
+            //    // Get the differences and directions of the report
+            //    for (int reportValue = 0; reportValue < report.Count - 1; reportValue++)
+            //    {
+            //        reportDirections.Add(GetDirection(report[reportValue], report[reportValue + 1]));
+            //    }
 
-        internal List<int> GetReportDifferences(List<int> report)
-        {
-            List<int> reportDifferences = new List<int>();
+            //    return reportDirections;
+            //}
 
-            // Get the differences and directions of the report
-            for (int reportValue = 0; reportValue < report.Count - 1; reportValue++)
-            {
-                reportDifferences.Add(Math.Abs(report[reportValue] - report[reportValue + 1]));
-            }
+            //internal List<int> GetReportDifferences(List<int> report)
+            //{
+            //    List<int> reportDifferences = new List<int>();
 
-            return reportDifferences;
-        }
+            //    // Get the differences and directions of the report
+            //    for (int reportValue = 0; reportValue < report.Count - 1; reportValue++)
+            //    {
+            //        reportDifferences.Add(Math.Abs(report[reportValue] - report[reportValue + 1]));
+            //    }
 
-        internal bool IsValidReport(List<int> report)
-        {
-            //Console.WriteLine(String.Join(",", report));
-            // Create empty List variables to hold differences and directions
-            List<int> reportDirections = GetReportDirections(report);
-            List<int> reportDifferences = GetReportDifferences(report);
+            //    return reportDifferences;
+            //}
 
-            // Check if the report is valid or not
-            bool allSameDirection = reportDirections.Distinct().Count() == 1;
-            int diffMin = reportDifferences.Min();
-            int diffMax = reportDifferences.Max();
+            //internal bool IsValidReport(List<int> report)
+            //{
+            //    // Create empty List variables to hold differences and directions
+            //    List<int> reportDirections = GetReportDirections(report);
+            //    List<int> reportDifferences = GetReportDifferences(report);
 
-            if (allSameDirection && diffMin >= MIN_DIFF && diffMax <= MAX_DIFF)
-            {
-                return true;
-            }
+            //    // Check if the report is valid or not
+            //    bool allSameDirection = reportDirections.Distinct().Count() == 1;
+            //    int diffMin = reportDifferences.Min();
+            //    int diffMax = reportDifferences.Max();
 
-            return false;
+            //    if (allSameDirection && diffMin >= MIN_DIFF && diffMax <= MAX_DIFF)
+            //    {
+            //        return true;
+            //    }
+
+            //    return false;
+            //}
         }
     }
 }

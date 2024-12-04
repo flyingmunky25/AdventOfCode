@@ -34,8 +34,7 @@
               "RelativeToolTip": "inputFiles\\sampleInput.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-03T02:27:01.616Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T02:27:01.616Z"
             },
             {
               "$type": "Document",
@@ -45,7 +44,7 @@
               "RelativeDocumentMoniker": "02\\day02.cs",
               "ToolTip": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\02\\day02.cs",
               "RelativeToolTip": "02\\day02.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAuwEIAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T02:23:21.22Z",
               "EditorCaption": ""
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T02:20:42.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T02:20:42.287Z"
             }
           ]
         }

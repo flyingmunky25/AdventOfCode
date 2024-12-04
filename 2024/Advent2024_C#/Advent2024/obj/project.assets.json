@@ -8,7 +8,7 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\usrple\\.nuget\\packages\\": {}
+    "C:\\Users\\plevajt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,11 +16,11 @@
       "projectUniqueName": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\Advent2024.csproj",
       "projectName": "Advent2024",
       "projectPath": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\Advent2024.csproj",
-      "packagesPath": "C:\\Users\\usrple\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\plevajt\\.nuget\\packages\\",
       "outputPath": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\usrple\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\plevajt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -61,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
