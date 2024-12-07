@@ -12,9 +12,9 @@ using System.IO;
  * 
  * index 75 edge case: 83 87 89 90 93 96 99
  */
-namespace Advent2024._02
+namespace AdventOfCode
 {
-    internal class day02
+    internal class Day02
     {
         const int MAX_DIFF = 3;
         const int MIN_DIFF = 1;
@@ -30,9 +30,9 @@ namespace Advent2024._02
             b.All(x => x >= -3 && x <= -1) ||
             b.All(x => x >= 1 && x <= 3);
 
-        public void RunDay02()
+        public void RunDay()
         {
-            var input = File.ReadLines(@"C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\inputFiles\input.txt")
+            var input = File.ReadLines(@"sampleinput.txt")
     .Select(s => s.Split(' ').Select(int.Parse));
 
             Console.WriteLine(input.Count(IsSafe1));

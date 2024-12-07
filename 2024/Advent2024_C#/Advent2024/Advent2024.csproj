@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="inputFiles\" />
+    <Folder Include="Solutions\" />
   </ItemGroup>
 
 </Project>

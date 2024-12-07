@@ -1,5 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Advent2024._02;
+﻿using AdventOfCode;
 
-day02 d02 = new day02();
-d02.RunDay02();
+Day d = new Day();
+d.Run(4);
+
+internal class Day
+{
+    public void Run(int d)
+    {
+        switch (d)
+        {
+            case 2:
+                Day02 day2 = new Day02();
+                day2.RunDay();
+                break;
+            case 4:
+                Day04 day4 = new Day04();
+                day4.RunDay();
+                break;
+            default: throw new ArgumentException("Invalid day choice");
+        }
+    }
+}

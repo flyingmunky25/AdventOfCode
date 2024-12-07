@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|c:\\scripting\\adventofcode\\2024\\advent2024_c#\\advent2024\\02\\day02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|solutionrelative:02\\day02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|c:\\scripting\\adventofcode\\2024\\advent2024_c#\\advent2024\\inputfiles\\sampleinput.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|solutionrelative:inputfiles\\sampleinput.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|c:\\scripting\\adventofcode\\2024\\advent2024_c#\\advent2024\\04\\day04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|solutionrelative:04\\day04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{650A8CAD-5ADD-422A-91B5-4599351AF372}|Advent2024.csproj|c:\\scripting\\adventofcode\\2024\\advent2024_c#\\advent2024\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,39 +21,31 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "sampleInput.txt",
-              "DocumentMoniker": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\inputFiles\\sampleInput.txt",
-              "RelativeDocumentMoniker": "inputFiles\\sampleInput.txt",
-              "ToolTip": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\inputFiles\\sampleInput.txt",
-              "RelativeToolTip": "inputFiles\\sampleInput.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-03T02:27:01.616Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "day02.cs",
-              "DocumentMoniker": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\02\\day02.cs",
-              "RelativeDocumentMoniker": "02\\day02.cs",
-              "ToolTip": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\02\\day02.cs",
-              "RelativeToolTip": "02\\day02.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAtAAAAAAAAAA==",
+              "Title": "day04.cs",
+              "DocumentMoniker": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\04\\day04.cs",
+              "RelativeDocumentMoniker": "04\\day04.cs",
+              "ToolTip": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\04\\day04.cs",
+              "RelativeToolTip": "04\\day04.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAApwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T02:23:21.22Z",
+              "WhenOpened": "2024-12-05T19:17:07.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T02:20:42.287Z"
             }
