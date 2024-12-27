@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\Advent2024.csproj",
         "projectName": "Advent2024",
         "projectPath": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\Advent2024.csproj",
-        "packagesPath": "C:\\Users\\usrple\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\plevajt\\.nuget\\packages\\",
         "outputPath": "C:\\Scripting\\AdventOfCode\\2024\\Advent2024_C#\\Advent2024\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\usrple\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\plevajt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

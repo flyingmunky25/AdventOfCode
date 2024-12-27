@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Data.Common;
+using AdventOfCode;
 
 namespace AdventOfCode
 {
@@ -13,65 +14,67 @@ namespace AdventOfCode
     {
         public void RunDay()
         {
-            List<String> records = File.ReadLines(@"C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\04\04_sampleInput.txt").ToList();
+            List<String> records = File.ReadLines(@"C:\Scripting\AdventOfCode\2024\Advent2024_C#\Advent2024\04\04_SAMPLEinput.txt").ToList();
 
-            int totalFinds = 0;
+            int partOneFinds = 0;
+            String partOneSearchPattern = "(XMAS|SAMX)";
 
-            // Find the horizontal matches
-           var test = records.Select(x => Regex.Matches(x, "(?<=(XMAS|SAMX))").Count);
+
+            /****** PART ONE ******/
+            // Find all horizontal values
+            partOneFinds += Utilities.CountOccurrencesWithPositiveLookahead(records, partOneSearchPattern);
 
             // Convert the rows to columns, then count again
-            List<String> columnConvert = ConvertListToColumns(records);
-            totalFinds += columnConvert.Select(x => Regex.Matches(x, "(?<=(XMAS|SAMX))")).Count();
+            List<String> columnConvert = Utilities.ConvertColumnsToRows(records);
+            partOneFinds += Utilities.CountOccurrencesWithPositiveLookahead(columnConvert, partOneSearchPattern);
 
-            foreach ( String record in records)
-            {
+            // Search the "forward" diagonals.
+            List<String> forwardDiagonals = Utilities.ConvertDiagonalsToVerticals(records, "forward", '.');
+            forwardDiagonals = Utilities.ConvertColumnsToRows(forwardDiagonals);
+            partOneFinds += Utilities.CountOccurrencesWithPositiveLookahead(forwardDiagonals, partOneSearchPattern);
 
-            }
+            List<String> backwardsDiagonals = Utilities.ConvertDiagonalsToVerticals(records, "backward", '.');
+            backwardsDiagonals = Utilities.ConvertColumnsToRows(backwardsDiagonals);
+            partOneFinds += Utilities.CountOccurrencesWithPositiveLookahead(backwardsDiagonals, partOneSearchPattern);
 
-            // Find the horizontal matches
-            // First, find the easy ones -- forwards and backwards
-            //List<Match> matches = Regex.Matches(recordsFlattened, @"(?<=(XMAS|SAMX))").Cast<Match>().ToList();
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(X\w{8}M\w{8}A\w{8}S))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(X\w{9}M\w{9}A\w{9}S))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(X\w{10}M\w{10}A\w{10}S}))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(X\w{11}M\w{11}A\w{11}S}))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(S\w{8}A\w{8}M\w{8}X))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(S\w{9}A\w{9}M\w{9}X))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(S\w{10}A\w{10}M\w{10}X))").Cast<Match>().ToList());
-            //matches.AddRange(Regex.Matches(recordsFlattened, @"(?<=(S\w{11}A\w{11}M\w{11}X))").Cast<Match>().ToList());
+            /****** PART TWO ******/
+            int partTwoFinds = 0;
 
-            //foreach ( Match m in matches)
+            // Reverse the forward list so it lines up with the backwards
+            forwardDiagonals.Reverse();
+
+            forwardDiagonals.ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("");
+            backwardsDiagonals.ForEach(x => Console.WriteLine(x));
+
+
+            
+            //// list both diagonals
+            //for (int row = 0; row < forwardDiagonals.Count; row++)
             //{
-            //    Console.WriteLine(m.Groups[1].Value);
+            //    String rowValue = forwardDiagonals[row];
+
+            //    for (int col = 0; col < rowValue.Length - 3; col++)
+            //    {
+            //        if (
+            //            (
+            //                (rowValue[col] == 'M' && rowValue[col+1] == 'A' && rowValue[col+2] == 'S') && 
+            //                (backwardsDiagonals[row][col + 2] == 'S' && backwardsDiagonals[row][col + 1] == 'A' && backwardsDiagonals[row][col] == 'M')
+            //            ) ||
+            //            (
+            //                (rowValue[col] == 'S' && rowValue[col + 1] == 'A' && rowValue[col + 2] == 'M') &&
+            //                (backwardsDiagonals[row][col + 2] == 'M' && backwardsDiagonals[row][col + 1] == 'A' && backwardsDiagonals[row][col] == 'S')
+            //            )
+            //        )
+            //        {
+            //            partTwoFinds++;
+            //        }
+            //    }
             //}
 
-        }
 
-        internal List<String> ConvertListToColumns(List<String> inputList)
-        {
-            List<String> columns = new List<String>();
-            
-            int recordCount = inputList.Count;
-
-            for ( int col = 0; col < recordCount; col++ )
-            {
-                List<char> columnValues = new List<char>();
-
-                for ( int row = 0; row < inputList.Count; row++ ) 
-                {
-                    columnValues.Add(inputList[row][col]);
-                }
-
-                columns.Add(columnValues.ToString());
-            }
-
-            return columns;
-        }
-
-        internal List<String> ConvertListToDiagonals(List<String> inputList, String diagonalDirection)
-        {
-            return new List<string>();
+            Console.WriteLine($"Part One: {partOneFinds}");
+            Console.WriteLine($"Part Two: {partTwoFinds}");
         }
     }
 }

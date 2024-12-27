@@ -1,7 +1,7 @@
 ﻿using AdventOfCode;
 
 Day d = new Day();
-d.Run(4);
+d.Run(11);
 
 internal class Day
 {
@@ -16,6 +16,14 @@ internal class Day
             case 4:
                 Day04 day4 = new Day04();
                 day4.RunDay();
+                break;
+            case 7:
+                Day07 day7 = new Day07();
+                day7.RunDay();
+                break;
+            case 11:
+                Day11 day11 = new Day11();
+                day11.RunDay();
                 break;
             default: throw new ArgumentException("Invalid day choice");
         }
